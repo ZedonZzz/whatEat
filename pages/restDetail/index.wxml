@@ -1,0 +1,87 @@
+<scroll-view class="container" scroll-y="true">
+  <view class="layout">
+    <van-overlay show="{{ overlayShow }}" bind:click="onClickHide">
+      <view class="wrapper">
+        <view class="img">
+          <van-image bind:click='imgClick' data-url="http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg" width='500rpx' height='500rpx' src='http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg' use-loading-slot>
+            <van-loading slot="loading" type="spinner" size="20" vertical />
+          </van-image>
+        </view>
+      </view>
+    </van-overlay>
+    <view class="infoCard">
+      <view class="title">
+        航人小炒
+      </view>
+      <view class="secBox">
+        <view class="left">
+          <view class="star">
+            <image wx:for="{{ star }}" wx:key="star" src="http://photos.szpt.top/i/2022/06/27/62b9a79d3cb54.png"></image>
+            <image wx:for="{{ 5-star }}" wx:key="satr" src="http://photos.szpt.top/i/2022/06/27/62b9a79d8efd8.png"></image>
+          </view>
+          <view class="mark" style="color: {{ star >= 4 ? '#e96c25' : '#d9a565' }}; font-weight: 600; font-size: 30rpx;">
+            {{ star }}
+          </view>
+          <view class="price">
+            ￥15/人
+          </view>
+        </view>
+        <view class="commentCount" bindtap="toView">
+          100人评价<van-icon name="arrow" />
+        </view>
+      </view>
+      <view class="picList">
+        <scroll-view scroll-x>
+          <van-image bind:click='imgClick' data-url="http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg" width='200rpx' height='200rpx' src='http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg' use-loading-slot>
+            <van-loading slot="loading" type="spinner" size="20" vertical />
+          </van-image>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="commentCountLayout">
+      <view class="title">
+        <view class="text">评价</view>
+        <view class="count">100人评价</view>
+        <view class="line" style="background-color: #ffbe0a; height: 8rpx; width: 80rpx; border-radius: 40rpx;"></view>
+      </view>
+    </view>
+    <view class="commentCountCard">
+      <view wx:if="{{ false }}" class="noData" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+        <view class="text">暂无数据</view>
+      </view>
+      <view class="list">
+        <view class="item" wx:for="{{ 5 }}">
+          <view class="info">
+            <view class="" style="display: flex;">
+              <view class="avatar">
+                <van-image round bind:click='imgClick' data-url="http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg" width='60rpx' height='60rpx' src='http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg' use-loading-slot>
+                  <van-loading slot="loading" type="spinner" size="20" vertical />
+                </van-image>
+              </view>
+              <view class="" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+                <view class="name">123</view>
+                <view class="star">
+                  <image wx:for="{{ star }}" wx:key="star" src="http://photos.szpt.top/i/2022/06/27/62b9a79d3cb54.png"></image>
+                  <image wx:for="{{ 5-star }}" wx:key="satr" src="http://photos.szpt.top/i/2022/06/27/62b9a79d8efd8.png"></image>
+                </view>
+              </view>
+            </view>
+            <view class="time">1天前</view>
+          </view>
+          <view class="content">
+            <view class="text">
+              又要上学了 每次买一箱背过去都不够吃的 吃过好多牌子螺蛳粉 还是最爱好欢螺 味道很浓郁 汤料很喜欢 料也超多 喜欢吃羊肉的朋友可以试试煮羊肉卷 还可以放点金针菇 土豆片 各种自己喜欢吃的 做豪华款吃 你会爱上的！！
+            </view>
+          </view>
+          <view class="picList">
+            <scroll-view scroll-x>
+            <van-image style="margin-right: 10rpx;" wx:for="{{ 3 }}" bind:click='imgClick' data-url="http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg" width='200rpx' height='200rpx' src='http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg' use-loading-slot>
+              <van-loading slot="loading" type="spinner" size="20" vertical />
+            </van-image>
+          </scroll-view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,27 @@
+<view class="layout">
+  <view class="userInfo">
+    <view class="avatar">
+      <image src="http://photos.szpt.top/i/2022/03/29/624256204b8c7.jpg"></image>
+    </view>
+    <view class="info">
+      <view class="userName">
+        <text>名称</text>
+      </view>
+      <view class="uid">
+        <text>uid:123123123</text>
+      </view>
+    </view>
+    <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif"></image>
+  </view>
+  <view class="functionList">
+    <view class="item" wx:for="{{ funcList }}" wx:key="item.title">
+      <view class="titleBox">
+        <view class="icon">
+          <icon class="t-icon {{ item.icon }}"></icon>
+        </view>
+        <view class="title">{{ item.title }}</view>
+      </view>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<view class="layout">
+  <van-popup
+    show="{{ show }}"
+    position="bottom"
+    custom-style="height: 40%;"
+    bind:close="onClose"
+  >
+    <van-picker
+      class="picker"
+      show-toolbar
+      title="选择"
+      columns="{{ columns }}"
+      bind:cancel="selectCancel"
+      bind:confirm="selectConfirm"
+      bind:change="selectChange"
+    />
+  </van-popup>
+  <view class="select" bindtap="selectClick">
+    <van-icon name="guide-o" size="20px" color="#0185fd" style="margin-left: 5px;" />
+    <text style="font-size: 30rpx;">{{ place }}</text>
+  </view>
+  <view class="search">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  </view>
+  <view class="restList">
+    <view class="cardItem" wx:for="{{ 10 }}" bindtap="goDetail">
+      <view class="img">
+        <view class="item">
+          <van-image height='200rpx' fit='cover' width='200rpx' src='http://photos.szpt.top/i/2022/03/23/623b27f07653c.jpg' use-loading-slot>
+            <van-loading slot="loading" type="spinner" size="20" vertical />
+          </van-image>
+        </view>
+      </view>
+      <view class="info">
+        <view class="title">航人小炒</view>
+        <view class="secBox">
+          <view class="mark">
+            <text style="color: {{ mark >= 4 ? '#e96c25' : '#d9a565' }}; font-weight: 600;">{{ mark }}  分</text>
+            <text style="color: #f1af57; padding-left: 10rpx;"></text>
+          </view>
+          <view class="distance" style="color: #878787; font-size: 25rpx; padding-right: 10rpx;">1.5km</view>
+        </view>
+        <view class="price" style="color: #878787; font-size: 25rpx;">人均￥20</view>
+        <view class="comment">
+          <text>"好吃量足"</text>
+        </view>
+        <view class="tasteList">
+          <view class="item">辣</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
